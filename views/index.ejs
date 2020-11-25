@@ -1,0 +1,36 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/homenavbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem vindo</h1>
+            <p class="lead">Este é um simples blog feito pelos alunos da Fatec de Mogi Mirim.</p>
+            <hr class="my-4">
+            <p>Descrição detalhada aqui!"</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Leias Mais</a>
+        </div>
+        <hr>
+        <% articles.forEach(article =>{ %>
+        <div class="card">
+            <div class="card-reader">
+                <h2 class="mt-2 ml-4"><%= article.title %></h2>
+            </div>
+            <div class="card-body">
+                <a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
+            </div>
+        </div> 
+        <br>
+        <% }) %>
+
+        <div class="row">
+            <div class="col col-12">
+                <a style="float:right" href="/articles/page/2">Next >>></a>
+            </div>
+            <hr>
+        </div>
+        <hr>
+    </div>
+</body>
+<%- include ('partials/footer.ejs') %>
